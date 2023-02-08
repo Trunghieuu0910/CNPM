@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #ccc;">
+               <children>
+                  <TextField layoutX="178.0" layoutY="93.0" />
+                  <TextField layoutX="178.0" layoutY="146.0" />
+                  <TextField layoutX="178.0" layoutY="204.0" />
+                  <TextField layoutX="178.0" layoutY="257.0" />
+                  <TextField layoutX="178.0" layoutY="306.0" />
+                  <TextField layoutX="178.0" layoutY="361.0" />
+                  <TextField layoutX="178.0" layoutY="42.0" />
+                  <Label layoutX="60.0" layoutY="46.0" text="Số hộ khẩu" />
+                  <Label layoutX="60.0" layoutY="97.0" text="Họ tên" />
+                  <Label layoutX="57.0" layoutY="150.0" text="Ngày sinh" />
+                  <Label layoutX="56.0" layoutY="208.0" text="Nơi sinh" />
+                  <Label layoutX="54.0" layoutY="261.0" text="Nguyên quán" />
+                  <Label layoutX="54.0" layoutY="310.0" text="Dân tộc" />
+                  <Label layoutX="55.0" layoutY="365.0" text="Nghề nghiệp" />
+                  <Label layoutX="417.0" layoutY="46.0" prefHeight="17.0" prefWidth="100.0" text="Nơi làm việc" AnchorPane.bottomAnchor="636.6666666666666" AnchorPane.leftAnchor="417.0" AnchorPane.rightAnchor="283.0" AnchorPane.topAnchor="46.0" />
+                  <TextField layoutX="541.0" layoutY="42.0" />
+                  <Label layoutX="417.0" layoutY="97.0" prefHeight="17.0" prefWidth="38.0" text="CCCD" AnchorPane.leftAnchor="417.0" />
+                  <Label layoutX="422.0" layoutY="150.0" text="Ngày cấp" AnchorPane.leftAnchor="417.0" />
+                  <Label layoutX="426.0" layoutY="208.0" text="Nơi cấp" AnchorPane.leftAnchor="417.0" />
+                  <Label layoutX="422.0" layoutY="261.0" text="Ngày đăng kí TT" AnchorPane.leftAnchor="417.0" />
+                  <Label layoutX="425.0" layoutY="309.0" text="Địa chỉ cũ" AnchorPane.leftAnchor="417.0" />
+                  <TextField layoutX="541.0" layoutY="93.0" />
+                  <TextField layoutX="541.0" layoutY="146.0" />
+                  <TextField layoutX="541.0" layoutY="204.0" />
+                  <TextField layoutX="541.0" layoutY="257.0" />
+                  <TextField layoutX="541.0" layoutY="306.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
