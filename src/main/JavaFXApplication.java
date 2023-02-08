@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
 package main;
-
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +23,7 @@ public class JavaFXApplication extends Application {
         Scene scene_login;
         scene_login = new Scene(login);
         scene_login.getStylesheets().add("/CSS/globalStyle.css");
-
+        
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene_login);
 //      primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -36,10 +35,10 @@ public class JavaFXApplication extends Application {
     }
 
     /**
-     * @param args the command line arguments
+     * @param args the command line argumentsjadm
      */
     public static void main(String[] args) {
         launch(args);
     }
-
+    
 }
