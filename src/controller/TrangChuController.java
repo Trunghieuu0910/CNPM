@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -19,9 +20,9 @@ import javafx.stage.Stage;
  *
  * @author Admin
  */
-public class TrangChuController implements  Initializable{
-    private Stage stage;
-    private Scene scene;
+public class TrangChuController implements Initializable {
+
+    
     private StageController sc = new StageController();
     @FXML
     private Button hokhau_btn;
@@ -37,10 +38,20 @@ public class TrangChuController implements  Initializable{
     private Pane hokhau_pane;
     @FXML
     private Pane thongke_pane;
+    @FXML
+    private TextField toTruong;
+    @FXML
+    private TextField nhanKhau;
+    @FXML
+    private TextField hoKhau;
+    @FXML
+    private TextField tamTru;
+    @FXML
+    private TextField tamVang;
 
     @FXML
     private void switchToHoKhauScene(ActionEvent e) throws IOException {
-       sc.switchToHoKhauScene(e);
+        sc.switchToHoKhauScene(e);
     }
 
     @FXML
@@ -52,53 +63,56 @@ public class TrangChuController implements  Initializable{
     private void switchToTrangChuScene(ActionEvent e) throws IOException {
         sc.switchToTrangChuScene(e);
     }
-    
+
     @FXML
     void switchToThongKeScene(ActionEvent e) throws IOException {
         sc.switchToThongKeScene(e);
     }
+
     @FXML
     void switchToQLSinhHoatScene(ActionEvent e) throws IOException {
         sc.switchToQLSinhHoatScene(e);
     }
+
     @FXML
     void switchToTinhDiemScene(ActionEvent e) throws IOException {
         sc.switchToTinhDiemScene(e);
     }
-    
-    @FXML
-    public void handleExit() {
-        sc.handleExit();
-    }
-    
+
     @FXML
     public void handleLogout(ActionEvent e) throws IOException {
         sc.handleLogout(e);
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         phan_quyen();
+
+        toTruong.setDisable(true);
+        tamTru.setDisable(true);
+        tamVang.setDisable(true);
+        nhanKhau.setDisable(true);
+        hoKhau.setDisable(true);
+
     }
-    
+
     public void phan_quyen() {
-        System.out.println(LoginController.user.getRole());
         if (LoginController.user.getRole().equals("to_truong")) {
             quanlysh_pane.setVisible(false);
             quanlysh_pane.setManaged(false);
-            
+
             quanlydiem_pane.setVisible(false);
             quanlydiem_pane.setManaged(false);
         }
         if (LoginController.user.getRole().equals("can_bo")) {
             hokhau_pane.setVisible(false);
             hokhau_pane.setManaged(false);
-            
+
             nhankhau_pane.setVisible(false);
             nhankhau_pane.setManaged(false);
-            
+
             thongke_pane.setVisible(false);
             thongke_pane.setManaged(false);
-        } 
+        }
     }
 }
