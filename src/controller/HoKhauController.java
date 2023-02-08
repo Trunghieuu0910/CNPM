@@ -19,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
+import model.HoKhau;
 
 /**
  *
@@ -37,6 +38,20 @@ public class HoKhauController implements Initializable {
     @FXML
     private Pane thongke_pane;
 
+    @FXML
+    private TableView<HoKhau> hokhau_table;
+    @FXML
+    private TableColumn<HoKhau, Integer> sohokhau;
+    @FXML
+    private TableColumn<HoKhau, String> tenchuho;
+    @FXML
+    private TableColumn<HoKhau, String> sonha;
+    @FXML
+    private TableColumn<HoKhau, String> duong;
+    @FXML
+    private TableColumn<HoKhau, String> xa;
+    @FXML
+    private TableColumn<HoKhau, String> quan;
     @FXML
     private ComboBox<String> choice_box;
     

@@ -138,7 +138,7 @@
                   </Pane>
                   <Pane fx:id="quanlydiem_pane" prefHeight="120.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="quanlysh_btn1" layoutY="24.0" mnemonicParsing="false" onAction="#switchToTinhDiemScene" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-width: 0px 0px 0px 3px; -fx-cursor: hand;" text=" Điểm danh" textFill="WHITE">
+                        <Button fx:id="quanlysh_btn1" layoutY="24.0" mnemonicParsing="false" onAction="#switchToTinhDiemScene" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-width: 0px 0px 0px 3px; -fx-cursor: hand;" text="Điểm danh" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -248,7 +248,6 @@
                             <TableColumn fx:id="event_col" prefWidth="131.33334863185883" text="Tên sự kiện" />
                             <TableColumn fx:id="place_col" prefWidth="78.66668701171875" text="Địa điểm" />
                             <TableColumn fx:id="time_col" prefWidth="123.99998474121094" text="Thời gian" />
-                              <TableColumn fx:id="id_col" prefWidth="75.0" text="Column X" />
                           </columns>
                         </TableView>
                      </children>

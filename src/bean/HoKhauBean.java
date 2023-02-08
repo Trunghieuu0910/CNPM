@@ -21,7 +21,6 @@ public class HoKhauBean {
     private List<NhanKhauModel> listNhanKhauModels;
     private List<ThanhVienCuaHoModel> listThanhVienCuaHo;
     private CheckBox check;
-    private int tong_diem;
 
     public HoKhauBean(HoKhauModel hoKhauModel, NhanKhauModel chuHo, List<NhanKhauModel> listNhanKhauModels, List<ThanhVienCuaHoModel> listThanhVienCuaHo) {
         this.hoKhauModel = hoKhauModel;
@@ -29,13 +28,6 @@ public class HoKhauBean {
         this.listNhanKhauModels = listNhanKhauModels;
         this.listThanhVienCuaHo = listThanhVienCuaHo;
     }
-
-    public HoKhauBean(HoKhauModel hoKhauModel, NhanKhauModel chuHo, int tong_diem) {
-        this.hoKhauModel = hoKhauModel;
-        this.chuHo = chuHo;
-        this.tong_diem = tong_diem;
-    }
-    
     
     public HoKhauBean() {
         this.hoKhauModel = new HoKhauModel();
@@ -48,14 +40,6 @@ public class HoKhauBean {
         this.hoKhauModel = hoKhauModel;
         this.chuHo = chuHo;
         this.check = check;
-    }
-
-    public int getTong_diem() {
-        return tong_diem;
-    }
-
-    public void setTong_diem(int tong_diem) {
-        this.tong_diem = tong_diem;
     }
 
     public CheckBox getCheck() {
