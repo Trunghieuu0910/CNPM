@@ -15,40 +15,6 @@ public class TamTruModel {
     private Date denNgay;
     private String lyDo;
 
-    public TamTruModel(int ID, int idNhanKhau, String maGiayTamTru, String soDienThoaiNguoiDangKy, Date tuNgay, Date denNgay, String lyDo) {
-        this.ID = ID;
-        this.idNhanKhau = idNhanKhau;
-        this.maGiayTamTru = maGiayTamTru;
-        this.soDienThoaiNguoiDangKy = soDienThoaiNguoiDangKy;
-        this.tuNgay = tuNgay;
-        this.denNgay = denNgay;
-        this.lyDo = lyDo;
-    }
- 
-    public TamTruModel(String maGiayTamTru, String soDienThoaiNguoiDangKy, Date tuNgay, Date denNgay, String lyDo) {
-        this.maGiayTamTru = maGiayTamTru;
-        this.soDienThoaiNguoiDangKy = soDienThoaiNguoiDangKy;
-        this.tuNgay = tuNgay;
-        this.denNgay = denNgay;
-        this.lyDo = lyDo;
-    }
-
-    public TamTruModel(int idNhanKhau, String maGiayTamTru, String soDienThoaiNguoiDangKy, Date tuNgay, Date denNgay, String lyDo) {
-        this.idNhanKhau = idNhanKhau;
-        this.maGiayTamTru = maGiayTamTru;
-        this.soDienThoaiNguoiDangKy = soDienThoaiNguoiDangKy;
-        this.tuNgay = tuNgay;
-        this.denNgay = denNgay;
-        this.lyDo = lyDo;
-    }
-    
-    
-
-    public TamTruModel() {
-        
-    }
-    
-    
     public int getID() {
         return ID;
     }
@@ -103,10 +69,6 @@ public class TamTruModel {
 
     public void setLyDo(String lyDo) {
         this.lyDo = lyDo;
-    }
-
-    public Object getText() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
    

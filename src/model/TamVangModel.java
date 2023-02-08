@@ -14,31 +14,6 @@ public class TamVangModel {
     private Date tuNgay;
     private Date denNgay;
     private String lyDo;
-    
-    
-
-    public TamVangModel(int ID, int idNhanKhau, String maGiayTamVang, String noiTamTru, Date tuNgay, Date denNgay, String lyDo) {
-        this.ID = ID;
-        this.idNhanKhau = idNhanKhau;
-        this.maGiayTamVang = maGiayTamVang;
-        this.noiTamTru = noiTamTru;
-        this.tuNgay = tuNgay;
-        this.denNgay = denNgay;
-        this.lyDo = lyDo;
-    }
-
-    public TamVangModel(int idNhanKhau, String maGiayTamVang, String noiTamTru, Date tuNgay, Date denNgay, String lyDo) {
-        this.idNhanKhau = idNhanKhau;
-        this.maGiayTamVang = maGiayTamVang;
-        this.noiTamTru = noiTamTru;
-        this.tuNgay = tuNgay;
-        this.denNgay = denNgay;
-        this.lyDo = lyDo;
-    }
-    
-    public TamVangModel() {
-        
-    }
 
     public int getID() {
         return ID;
