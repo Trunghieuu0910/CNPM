@@ -14,13 +14,13 @@ public class SuKien {
     private String place;
     private String time;
     private String content;
-    private int id;
+    private String id;
 
     public SuKien() {
 
     }
 
-    public SuKien(int id, String name, String place, String time, String content) {
+    public SuKien(String id, String name, String place, String time, String content) {
         this.id = id;
         this.name = name;
         this.place = place;
@@ -50,7 +50,7 @@ public class SuKien {
         return content;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -70,7 +70,7 @@ public class SuKien {
         this.content = content;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

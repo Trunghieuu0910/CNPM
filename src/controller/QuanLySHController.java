@@ -5,8 +5,6 @@
 package controller;
 
 import Services.SuKienService;
-import controller.QuanLySHManageController.ChiTietSuKienController;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -17,10 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -29,8 +24,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import model.SuKien;
 
 /**
@@ -69,8 +62,6 @@ public class QuanLySHController implements Initializable {
     private TableColumn<SuKien, String> place_col;
     @FXML
     private TableColumn<SuKien, String> time_col;
-    @FXML
-    private TableColumn<SuKien, Integer> id_col;
 
     /**
      * Initializes the controller class.
@@ -87,29 +78,6 @@ public class QuanLySHController implements Initializable {
             Logger.getLogger(QuanLySHController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        sukien_table.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
-
-                FXMLLoader f = new FXMLLoader(getClass().getResource("/view/ChiTietSuKien.fxml"));
-
-                Parent root1 = null;
-                try {
-                    root1 = (Parent) f.load();
-                } catch (IOException ex) {
-                    Logger.getLogger(QuanLySHController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                ChiTietSuKienController controller = f.getController();
-                SuKien s = sukien_table.getSelectionModel().getSelectedItem();
-                controller.setThongTinSuKien(s);
-
-                Stage stage1 = new Stage();
-                stage1.setScene(new Scene(root1));
-                stage1.initModality(Modality.APPLICATION_MODAL);
-                stage1.setResizable(false);
-                stage1.show();
-
-            }
-        });
     }
 
     public void phan_quyen() {
@@ -147,11 +115,6 @@ public class QuanLySHController implements Initializable {
     @FXML
     private void switchToTrangChuScene(ActionEvent e) throws IOException {
         sc.switchToTrangChuScene(e);
-    }
-    
-    @FXML
-    private void switchToChiTietSuKienScene(ActionEvent e) throws IOException {
-        sc.switchToChiTietSuKienScene(e);
     }
 
     @FXML
@@ -195,8 +158,6 @@ public class QuanLySHController implements Initializable {
         place_col.setCellValueFactory(new PropertyValueFactory<>("place"));
 
         time_col.setCellValueFactory(new PropertyValueFactory<>("time"));
-
-        id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
 
         sukien_table.setItems(SKService.getSuKien());
     }
