@@ -74,15 +74,6 @@ public class NhanKhauModel {
         this.ghiChu = ghiChu;
     }
 
-    public NhanKhauModel(int ID, String hoTen, String nguyenQuan, String danToc, String diaChiHienNay, String ngheNghiep) {
-        this.ID = ID;
-        this.hoTen = hoTen;
-        this.nguyenQuan = nguyenQuan;
-        this.danToc = danToc;
-        this.diaChiHienNay = diaChiHienNay;
-        this.ngheNghiep = ngheNghiep;
-    }
-
     
 
     public NhanKhauModel() {

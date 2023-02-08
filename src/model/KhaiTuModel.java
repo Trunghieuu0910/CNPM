@@ -15,32 +15,6 @@ public class KhaiTuModel {
     private Date ngayChet;
     private String lyDoChet;
 
-    public KhaiTuModel(int ID, String soGiayKhaiTu, int idNguoiKhai, int idNguoiChet, Date ngayKhai, Date ngayChet, String lyDoChet) {
-        this.ID = ID;
-        this.soGiayKhaiTu = soGiayKhaiTu;
-        this.idNguoiKhai = idNguoiKhai;
-        this.idNguoiChet = idNguoiChet;
-        this.ngayKhai = ngayKhai;
-        this.ngayChet = ngayChet;
-        this.lyDoChet = lyDoChet;
-    }
-
-    public KhaiTuModel(String soGiayKhaiTu, int idNguoiKhai, int idNguoiChet, Date ngayKhai, Date ngayChet, String lyDoChet) {
-        this.soGiayKhaiTu = soGiayKhaiTu;
-        this.idNguoiKhai = idNguoiKhai;
-        this.idNguoiChet = idNguoiChet;
-        this.ngayKhai = ngayKhai;
-        this.ngayChet = ngayChet;
-        this.lyDoChet = lyDoChet;
-    }
-
-    
-    
-    public KhaiTuModel() {
-        
-    }
-    
-    
     public int getID() {
         return ID;
     }
