@@ -2,8 +2,10 @@ package bean;
 
 import java.util.ArrayList;
 import java.util.List;
-import javafx.scene.control.CheckBox;
-import model.*;
+import model.ChungMinhThuModel;
+import model.GiaDinhModel;
+import model.NhanKhauModel;
+import model.TieuSuModel;
 
 /**
  *
@@ -20,7 +22,7 @@ public class NhanKhauBean {
         this.chungMinhThuModel = chungMinhThuModel;
     }
     
-    
+
     
     public NhanKhauBean(NhanKhauModel nhanKhauModel, ChungMinhThuModel chungMinhThuModel, List<TieuSuModel> listTieuSuModels, List<GiaDinhModel> listGiaDinhModels) {
         this.nhanKhauModel = nhanKhauModel;
@@ -68,4 +70,6 @@ public class NhanKhauBean {
         this.listGiaDinhModels = listGiaDinhModels;
     }
     
+
+   
 }

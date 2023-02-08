@@ -31,6 +31,7 @@ public class JavaFXApplication extends Application {
 //      primaryStage.getScene().getRoot().setEffect(new DropShadow());
 
         primaryStage.show();
+        System.out.println(primaryStage.getHeight() + " " + primaryStage.getWidth());
     }
 
     /**

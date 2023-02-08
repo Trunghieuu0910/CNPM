@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -90,7 +91,7 @@ public class StageController {
         stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
         stage.show();
     }
-    
+
     @FXML
     public void switchToThemNhanKhauScene(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/ThemNhanKhau.fxml"));
@@ -146,6 +147,7 @@ public class StageController {
      // ket thuc lam nhan khau
     
     
+
     @FXML
     public void switchToThemHoKhauScene(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/ThemHoKhau.fxml"));
@@ -158,10 +160,13 @@ public class StageController {
         stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
         stage.show();
     }
-     @FXML
-    public void switchToTinhDiemScene(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/TinhDiem.fxml"));
+
+    
+        @FXML
+    public void switchToThemHoKhauScene(MouseEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ThemHoKhau.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
         scene.getStylesheets().add("/CSS/globalStyle.css");
         stage.setScene(scene);
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
@@ -170,7 +175,59 @@ public class StageController {
         stage.show();
     }
     
+    @FXML
+    public void switchToChuyenDi(ActionEvent e) throws  IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/view/HoKhauChuyenDi.fxml"));
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add("/CSS/globalStyle.css");
+        stage.setScene(scene);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+        stage.show();
+    }
+    
+        @FXML
+    public void switchToTachHoKhau(ActionEvent e) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/view/TachHoKhau.fxml"));
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add("/CSS/globalStyle.css");
+        stage.setScene(scene);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+        stage.show();
+    }
+ 
    
+   @FXML
+    public void switchToThongTinHoKhauScene(MouseEvent e) throws  IOException{
+        FXMLLoader fl = new FXMLLoader(getClass().getResource("/view/thongTinHoKhau.fxml"));
+        Parent root1 = (Parent) fl.load();
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(root1));
+        stage1.show();
+    }
+    
+    @FXML
+    public void switchToChonThanhVienScene(ActionEvent e) throws  IOException{
+        FXMLLoader fl = new FXMLLoader(getClass().getResource("/view/ChonThanhVien.fxml"));
+        Parent root1 = (Parent) fl.load();
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(root1));
+        stage1.show();
+    }
+    
+    @FXML
+    public void switchToTimChuHoScene(ActionEvent e) throws  IOException{
+        FXMLLoader fl = new FXMLLoader(getClass().getResource("/view/TimChuHo.fxml"));
+        Parent root1 = (Parent) fl.load();
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(root1));
+        stage1.show();
+    }
     
     @FXML
     public void switchToDetailScene() throws IOException {
@@ -180,6 +237,21 @@ public class StageController {
         stage1.setScene(new Scene(root1));
         stage1.show();
     }
+    
+    @FXML
+    public void switchToTinhDiemScene(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/TinhDiem.fxml"));
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add("/CSS/globalStyle.css");
+        stage.setScene(scene);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+        stage.show();
+    }
+    
+
     
     @FXML
     public void switchToDangNhapScene(ActionEvent e) throws IOException {

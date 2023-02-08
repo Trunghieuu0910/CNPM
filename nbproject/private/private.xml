@@ -11,6 +11,11 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/DHBK/CNPM/cnpm/NMCNPM/src/controller/HoKhauManageController/HoKhauChuyenDiController.java</file>
+            <file>file:/D:/DHBK/CNPM/cnpm/NMCNPM/src/main/JavaFXApplication.java</file>
+            <file>file:/D:/DHBK/CNPM/cnpm/NMCNPM/src/controller/HoKhauManageController/TachHoKhauController.java</file>
+            <file>file:/D:/DHBK/CNPM/cnpm/NMCNPM/src/controller/HoKhauManageController/ThemHoKhauController.java</file>
+        </group>
     </open-files>
 </project-private>
