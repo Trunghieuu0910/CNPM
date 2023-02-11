@@ -23,15 +23,7 @@
    <top>
       <AnchorPane fx:id="pane1" prefHeight="60.0" prefWidth="864.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #0A4969;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="824.0" layoutY="5.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
-                     <image>
-                        <Image url="@../images/close.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
+            <Pane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #0A4969;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <HBox accessibleRole="LIST_ITEM" alignment="CENTER" layoutY="31.0" prefHeight="30.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <padding>
                   <Insets left="30.0" right="30.0" />
@@ -165,16 +157,6 @@
                            </font>
                         </Button>
                         <FontAwesomeIconView fill="WHITE" glyphName="TASKS" layoutX="14.0" layoutY="49.0" size="16" />
-                     </children>
-                  </Pane>
-                  <Pane fx:id="quanlysh_pane" prefHeight="120.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="quanlysh_btn" layoutY="24.0" mnemonicParsing="false" onAction="#switchToQLSinhHoatScene" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-width: 0px 0px 0px 3px; -fx-cursor: hand;" text="    Quản lý SH" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Button>
-                        <FontAwesomeIconView fill="WHITE" glyphName="CALENDAR" layoutX="14.0" layoutY="49.0" size="16" />
                      </children>
                   </Pane>
                </children>
