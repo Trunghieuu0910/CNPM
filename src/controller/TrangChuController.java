@@ -1,28 +1,41 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Bui Anh Tuan
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller;
 
+import Services.HoKhauService;
+import Services.NhanKhauService;
+import bean.HoKhauBean;
+import bean.NhanKhauBean;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
+import javafx.stage.Modality;
+import javafx.stage.StageStyle;
+import model.UserModel;
 
-/**
- *
- * @author Admin
- */
-public class TrangChuController implements  Initializable{
-    private Stage stage;
-    private Scene scene;
+public class TrangChuController implements Initializable {
+
     private StageController sc = new StageController();
+    private NhanKhauService nhanKhauService = new NhanKhauService();
+    private HoKhauService hoKhauService = new HoKhauService();
+
     @FXML
     private Button hokhau_btn;
     @FXML
@@ -37,10 +50,20 @@ public class TrangChuController implements  Initializable{
     private Pane hokhau_pane;
     @FXML
     private Pane thongke_pane;
+    @FXML
+    private TextField toTruong;
+    @FXML
+    private TextField nhanKhau;
+    @FXML
+    private TextField hoKhau;
+    @FXML
+    private TextField tamTru;
+    @FXML
+    private TextField tamVang;
 
     @FXML
     private void switchToHoKhauScene(ActionEvent e) throws IOException {
-       sc.switchToHoKhauScene(e);
+        sc.switchToHoKhauScene(e);
     }
 
     @FXML
@@ -52,53 +75,95 @@ public class TrangChuController implements  Initializable{
     private void switchToTrangChuScene(ActionEvent e) throws IOException {
         sc.switchToTrangChuScene(e);
     }
-    
+
     @FXML
     void switchToThongKeScene(ActionEvent e) throws IOException {
         sc.switchToThongKeScene(e);
     }
+
     @FXML
     void switchToQLSinhHoatScene(ActionEvent e) throws IOException {
         sc.switchToQLSinhHoatScene(e);
     }
+
     @FXML
     void switchToTinhDiemScene(ActionEvent e) throws IOException {
         sc.switchToTinhDiemScene(e);
     }
-    
+
     @FXML
-    public void handleExit() {
-        sc.handleExit();
+    public void handleLogout(MouseEvent e) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("Xác nhận!");
+        alert.setContentText("Bạn chắc chắn muốn đăng xuất?");
+        alert.initStyle(StageStyle.DECORATED);
+        alert.setResizable(false);
+        ButtonType buttonYes = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+        ButtonType buttonNo = new ButtonType("No", ButtonBar.ButtonData.NO);
+        alert.getButtonTypes().setAll(buttonYes, buttonNo);
+        alert.initModality(Modality.APPLICATION_MODAL);
+
+        Optional<ButtonType> res = alert.showAndWait();
+        if (res.get() == buttonYes) {
+            sc.switchToDangNhapScene(e);
+            LoginController.user = new UserModel("", "");
+        }
     }
-    
-    @FXML
-    public void handleLogout(ActionEvent e) throws IOException {
-        sc.handleLogout(e);
-    }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         phan_quyen();
+
+        toTruong.setDisable(true);
+        tamTru.setDisable(true);
+        tamVang.setDisable(true);
+        nhanKhau.setDisable(true);
+        hoKhau.setDisable(true);
+        
+        setData();
+
     }
-    
+
     public void phan_quyen() {
-        System.out.println(LoginController.user.getRole());
         if (LoginController.user.getRole().equals("to_truong")) {
             quanlysh_pane.setVisible(false);
             quanlysh_pane.setManaged(false);
-            
+
             quanlydiem_pane.setVisible(false);
             quanlydiem_pane.setManaged(false);
         }
         if (LoginController.user.getRole().equals("can_bo")) {
             hokhau_pane.setVisible(false);
             hokhau_pane.setManaged(false);
-            
+
             nhankhau_pane.setVisible(false);
             nhankhau_pane.setManaged(false);
-            
+
             thongke_pane.setVisible(false);
             thongke_pane.setManaged(false);
-        } 
+        }
+    }
+
+    public void setData() {
+        List<NhanKhauBean> listNk = new ArrayList<>();
+        listNk = nhanKhauService.getListNhanKhau();
+        List<HoKhauBean> listHk = new ArrayList<>();
+        listHk = hoKhauService.getListHoKhau();
+
+        int numberOfNhanKhau = 0;
+        int numberOfHoKhau = 0;
+
+        for (NhanKhauBean n : listNk) {
+            numberOfNhanKhau++;
+        }
+        for (HoKhauBean n : listHk) {
+            numberOfHoKhau++;
+        }
+        
+        System.out.println(numberOfHoKhau);
+
+        nhanKhau.setText(String.valueOf(numberOfNhanKhau));
+        hoKhau.setText(String.valueOf(numberOfHoKhau));
+
     }
 }

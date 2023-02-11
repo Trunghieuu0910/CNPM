@@ -5,6 +5,15 @@ import java.sql.*;
  *
  * @author Hai
  */
+
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu - Bui Anh Tuan
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
+    Kết nối với cơ sở dữ liệu
+ */
+
 public class MysqlConnection {
     public static Connection getMysqlConnection() throws SQLException, ClassNotFoundException {
         String hostName = "localhost";

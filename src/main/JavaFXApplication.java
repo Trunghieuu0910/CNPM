@@ -27,16 +27,14 @@ public class JavaFXApplication extends Application {
 
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene_login);
-//      primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setResizable(false);
         primaryStage.getScene().setFill(Color.TRANSPARENT);
-//      primaryStage.getScene().getRoot().setEffect(new DropShadow());
 
         primaryStage.show();
-        System.out.println(primaryStage.getHeight() + " " + primaryStage.getWidth());
     }
 
     /**
-     * @param args the command line arguments
+     * @param args the command line argumentsjadm
      */
     public static void main(String[] args) {
         launch(args);

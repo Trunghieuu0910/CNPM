@@ -9,8 +9,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -25,15 +27,7 @@
    <top>
       <AnchorPane fx:id="pane1" prefHeight="60.0" prefWidth="864.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #0A4969;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <children>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="824.0" layoutY="5.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#handleExit" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
-                     <image>
-                        <Image url="@../images/close.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
+            <Pane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #0A4969;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <HBox accessibleRole="LIST_ITEM" alignment="CENTER" layoutY="31.0" prefHeight="30.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <padding>
                   <Insets left="30.0" right="30.0" />
@@ -142,15 +136,61 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="55.0" prefWidth="714.0" style="-fx-background-color: #ccc; -fx-background-radius: 0px 0px 20px 20px;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+            <Pane layoutX="20.0" layoutY="-13.0" prefHeight="55.0" prefWidth="714.0" style="-fx-background-color: #ccc; -fx-background-radius: 0px 0px 20px 20px;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label layoutX="57.0" layoutY="12.0" text="Lựa chọn thông tin cần thống kê">
+                  <Label layoutX="28.0" layoutY="2.0" prefHeight="28.0" prefWidth="80.0" text="Giới Tính">
                      <font>
-                        <Font name="System Bold" size="19.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="thongke_button" layoutX="587.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAction" style="-fx-background-color: #0A4969; -fx-cursor: hand;" text="Thống kê" textFill="WHITE" />
-                  <ComboBox fx:id="choice_box" layoutX="392.0" layoutY="15.0" prefWidth="150.0" />
+                  <Button fx:id="thongke_button" layoutX="568.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleAction" style="-fx-background-color: #0A4969; -fx-cursor: hand;" text="Thống Kê" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Button>
+                  <ComboBox fx:id="choice_box" layoutX="109.0" layoutY="2.0" prefHeight="21.0" prefWidth="173.0" promptText="Lựa chọn giới tính">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></ComboBox>
+                  <Label layoutX="307.0" layoutY="2.0" prefHeight="28.0" prefWidth="113.0" text="Tình Trạng">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tuoiTu" layoutX="140.0" layoutY="29.0" prefHeight="20.0" prefWidth="51.0" />
+                  <TextField fx:id="tuoiDen" layoutX="232.0" layoutY="29.0" prefHeight="20.0" prefWidth="51.0" />
+                  <TextField fx:id="namTu" layoutX="404.0" layoutY="31.0" prefHeight="20.0" prefWidth="51.0" />
+                  <TextField fx:id="namDen" layoutX="501.0" layoutY="29.0" prefHeight="20.0" prefWidth="51.0" />
+                  <Label layoutX="312.0" layoutY="27.0" prefHeight="24.0" prefWidth="46.0" text="Năm">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="29.0" prefHeight="28.0" prefWidth="72.0" text="Độ tuổi">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="108.0" layoutY="29.0" prefHeight="28.0" prefWidth="32.0" text="Từ:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="372.0" layoutY="29.0" prefHeight="28.0" prefWidth="32.0" text="Từ:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="196.0" layoutY="31.0" prefHeight="28.0" prefWidth="36.0" text="đến">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="463.0" layoutY="31.0" prefHeight="28.0" prefWidth="38.0" text="đến">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="choice_box1" layoutX="404.0" layoutY="4.0" prefHeight="21.0" prefWidth="148.0" promptText="Lựa chọn tình trạng" />
                </children>
             </Pane>
             <Pane fx:id="genderChartPane" layoutY="71.0" prefHeight="354.0" prefWidth="714.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1px 0px 0px 0px;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0">
@@ -175,7 +215,22 @@
                   </HBox>
                </children>
             </Pane>
-            <Pane fx:id="emptyPane" layoutX="10.0" layoutY="10.0" prefHeight="353.0" prefWidth="714.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1px 0px 0px 0px;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0" />
+            <Pane fx:id="emptyPane" layoutX="10.0" layoutY="70.0" prefHeight="354.0" prefWidth="714.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1px 0px 0px 0px;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <children>
+                  <ScrollPane prefHeight="354.0" prefWidth="708.0">
+                     <content>
+                        <TableView fx:id="table" prefHeight="345.0" prefWidth="708.0">
+                           <columns>
+                              <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="hoTenColumn" prefWidth="161.0" text="Họ Tên" />
+                              <TableColumn fx:id="ngaySinhColumn" prefWidth="145.0" text="Ngày Sinh" />
+                              <TableColumn fx:id="gioiTinhColumn" prefWidth="96.0" text="Giới Tính" />
+                              <TableColumn fx:id="diaChiColumn" prefWidth="230.0" text="Địa Chỉ Hiện Nay" />
+                           </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+               </children></Pane>
          </children>
       </AnchorPane>
    </center>

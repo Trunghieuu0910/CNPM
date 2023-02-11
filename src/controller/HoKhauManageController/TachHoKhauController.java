@@ -1,14 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller.HoKhauManageController;
 
 import Services.HoKhauService;
 import bean.HoKhauBean;
 import bean.MemOfFamily;
-import static controller.HoKhauManageController.ChonThanhVienController.map;
-import static controller.HoKhauManageController.ChonThanhVienController.thanhVienMoi;
 import controller.StageController;
 import java.io.IOException;
 import java.net.URL;
@@ -24,11 +24,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
@@ -40,7 +36,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import model.NhanKhauModel;
 import model.ThanhVienCuaHoModel;
 

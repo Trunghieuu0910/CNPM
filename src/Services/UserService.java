@@ -1,7 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Bui Anh Tuan
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
+
 package Services;
 
 import controller.LoginController;
@@ -11,10 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import model.UserModel;
 
-/**
- *
- * @author Admin
- */
 public class UserService {
 
     public static boolean login(String userName, String passwod) throws SQLException, ClassNotFoundException {

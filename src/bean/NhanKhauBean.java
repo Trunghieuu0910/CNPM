@@ -2,6 +2,7 @@ package bean;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import model.ChungMinhThuModel;
 import model.GiaDinhModel;
 import model.NhanKhauModel;
@@ -16,6 +17,7 @@ public class NhanKhauBean {
     private ChungMinhThuModel chungMinhThuModel;
     private List<TieuSuModel> listTieuSuModels;
     private List<GiaDinhModel> listGiaDinhModels;
+
     
     public NhanKhauBean(NhanKhauModel nhanKhauModel, ChungMinhThuModel chungMinhThuModel, List<TieuSuModel> listTieuSuModels, List<GiaDinhModel> listGiaDinhModels) {
         this.nhanKhauModel = nhanKhauModel;
@@ -24,6 +26,11 @@ public class NhanKhauBean {
         this.listGiaDinhModels = listGiaDinhModels;
     }
 
+    public NhanKhauBean(NhanKhauModel nhanKhauModel, ChungMinhThuModel chungMinhThuModel) {
+        this.nhanKhauModel = nhanKhauModel;
+        this.chungMinhThuModel = chungMinhThuModel;
+    }
+    
     public NhanKhauBean() {
         this.nhanKhauModel = new NhanKhauModel();
         this.chungMinhThuModel = new ChungMinhThuModel();

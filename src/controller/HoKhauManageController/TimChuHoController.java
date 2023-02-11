@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller.HoKhauManageController;
 
 import Services.HoKhauService;
 import Services.NhanKhauService;
-import bean.HoKhauBean;
-import bean.MemOfFamily;
 import bean.NhanKhauBean;
 import controller.StageController;
 import java.io.IOException;
@@ -21,13 +21,8 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -38,7 +33,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 /**
  * FXML Controller class
@@ -158,7 +152,28 @@ public class TimChuHoController implements Initializable {
 
     @FXML
     public void confirm(ActionEvent e) throws IOException {
-        Stage stage = (Stage) confirmButton.getScene().getWindow();
-        stage.close();
+        NhanKhauBean nhanKhauBean = nhanKhauTable.getSelectionModel().getSelectedItem();
+
+        HoKhauService hoKhauService = new HoKhauService();
+        if (hoKhauService.checkPerson(nhanKhauBean.getNhanKhauModel().getID()) == false) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Thông báo");
+            alert.setHeaderText("Thành viên đã thuộc hộ khác!");
+            alert.show();
+        } else if (ChonThanhVienController.map.containsKey(nhanKhauBean.getChungMinhThuModel().getSoCMT())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Thông báo");
+            alert.setHeaderText("Thành viên đã được chọn!");
+            alert.show();
+        } else {
+            nk = nhanKhauBean;
+            if (!map.isEmpty()) {
+                map.clear();
+            }
+            map.put(nk.getChungMinhThuModel().getSoCMT(), "chủ hộ");
+            ThemHoKhauController.map = map;
+            Stage stage = (Stage) confirmButton.getScene().getWindow();
+            stage.close();
+        }
     }
 }
