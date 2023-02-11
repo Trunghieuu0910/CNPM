@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -23,11 +21,7 @@
          <children>
             <Pane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #0A4969;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="824.0" layoutY="5.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
-                     <image>
-                        <Image url="@../images/close.png" />
-                     </image>
-                  </ImageView>
+                  <FontAwesomeIconView fill="RED" glyphName="SIGN_OUT" layoutX="838.0" layoutY="20.0" onMouseClicked="#handleLogout" size="20" />
                </children>
             </Pane>
             <HBox accessibleRole="LIST_ITEM" alignment="CENTER" layoutY="31.0" prefHeight="30.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -136,13 +130,6 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="506.0" prefHeight="47.0" prefWidth="200.0">
-               <children>
-                  <Label layoutX="40.0" layoutY="15.0" text="Welcome Back" />
-                  <Label layoutX="125.0" layoutY="15.0" text=" |  " />
-                  <Button fx:id="logout_btn" layoutX="133.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleLogout" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-width: 0px 0px 1px 0px;" text="Đăng xuất" textFill="#0c3fc0" />
-               </children>
-            </Pane>
             <Label layoutX="53.0" layoutY="122.0" text="Số nhân khẩu trên địa bàn">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -153,20 +140,8 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="53.0" layoutY="230.0" text="Số tạm vắng">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="53.0" layoutY="286.0" text="Số tạm trú">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
             <TextField fx:id="nhanKhau" layoutX="357.0" layoutY="123.0" prefHeight="32.0" prefWidth="221.0" />
-            <TextField fx:id="tamVang" layoutX="357.0" layoutY="228.0" prefHeight="32.0" prefWidth="221.0" />
             <TextField fx:id="hoKhau" layoutX="357.0" layoutY="176.0" prefHeight="32.0" prefWidth="221.0" />
-            <TextField fx:id="tamTru" layoutX="357.0" layoutY="297.0" prefHeight="32.0" prefWidth="221.0" />
             <Label layoutX="53.0" layoutY="64.0" text="Tổ trưởng">
                <font>
                   <Font name="System Bold" size="18.0" />

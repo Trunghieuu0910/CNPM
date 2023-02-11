@@ -4,6 +4,10 @@
     Teacher    : Trinh Thanh Trung
     Class      : Nhap mon cong nghe phan mem - code: 136813
  */
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package controller.HoKhauManageController;
 
 import Services.HoKhauService;
@@ -45,7 +49,7 @@ import model.ThanhVienCuaHoModel;
  */
 public class TachHoKhauController implements Initializable {
 
-    private Map<String, String> map;
+    private Map<Integer, String> map = new HashMap<Integer, String>();
     private StageController sc = new StageController();
     private MemOfFamily chuho;
     private List<MemOfFamily> thanhVienMoi = new ArrayList();
@@ -136,7 +140,7 @@ public class TachHoKhauController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.map = new HashMap<String, String>();
+        this.map = new HashMap<Integer, String>();
         listHoKhau();
     }
 
@@ -245,12 +249,17 @@ public class TachHoKhauController implements Initializable {
     public void selectNhanKhauTableview() {
         MemOfFamily memOfFamily = thanhVienTable.getSelectionModel().getSelectedItem();
 
-        if (map.containsKey(memOfFamily.getNhanKhau().getChungMinhThuModel().getSoCMT()) == true) {
+        if (this.map.containsKey(memOfFamily.getNhanKhau().getNhanKhauModel().getID()) == true) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Thông báo");
             alert.setHeaderText("Thành viên đã được chọn. Vui lòng chọn thành viên khác!");
             alert.show();
-        } else {
+            System.out.println(this.map.size());
+            System.out.println(memOfFamily.getNhanKhau().getChungMinhThuModel().getSoCMT());
+            
+            System.out.println(this.map.get(map.keySet()));
+        }
+        else {
             TextInputDialog notice = new TextInputDialog();
             notice.setHeaderText("Nhập quan hệ với chủ hộ");
             notice.showAndWait();
@@ -265,8 +274,10 @@ public class TachHoKhauController implements Initializable {
 
                 memOfFamily.getThanhVienCuaHoModel().setQuanHeVoiChuHo(quanHe);
                 thanhVienMoi.add(memOfFamily);
-                map.put(memOfFamily.getNhanKhau().getChungMinhThuModel().getSoCMT(), quanHe);
+                this.map.put(memOfFamily.getNhanKhau().getNhanKhauModel().getID(), quanHe);
                 setDataMoi(thanhVienMoi);
+                
+                System.out.println(map.size());
 
             }
         }
@@ -287,11 +298,11 @@ public class TachHoKhauController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOne) {
-            if (memOfFamily.getNhanKhau().getChungMinhThuModel().getSoCMT() == chuho.getNhanKhau().getChungMinhThuModel().getSoCMT()) {
+            if (memOfFamily.getNhanKhau().getNhanKhauModel().getID() == chuho.getNhanKhau().getNhanKhauModel().getID()) {
                 chuHoMoi.clear();
             }
             thanhVienMoi.remove(memOfFamily);
-            map.remove(memOfFamily.getNhanKhau().getChungMinhThuModel().getSoCMT());
+            map.remove(memOfFamily.getNhanKhau().getNhanKhauModel().getID());
             setDataMoi(thanhVienMoi);
         } else {
             System.out.println("Hủy xóa!");
@@ -370,7 +381,7 @@ public class TachHoKhauController implements Initializable {
             HoKhauService hoKhauService = new HoKhauService();
             hoKhauService.tachHoKhau(hoKhauMoi);
 
-            this.map = new HashMap<String, String>();
+            this.map = new HashMap<Integer, String>();
             this.thanhVienMoi = new ArrayList();
             
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

@@ -50,7 +50,6 @@ public class HoKhauController implements Initializable {
     private Pane hokhau_pane;
     @FXML
     private Pane thongke_pane;
-
     @FXML
     private TextField searchText;
     @FXML

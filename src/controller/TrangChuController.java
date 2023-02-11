@@ -56,10 +56,6 @@ public class TrangChuController implements Initializable {
     private TextField nhanKhau;
     @FXML
     private TextField hoKhau;
-    @FXML
-    private TextField tamTru;
-    @FXML
-    private TextField tamVang;
 
     @FXML
     private void switchToHoKhauScene(ActionEvent e) throws IOException {
@@ -115,8 +111,6 @@ public class TrangChuController implements Initializable {
         phan_quyen();
 
         toTruong.setDisable(true);
-        tamTru.setDisable(true);
-        tamVang.setDisable(true);
         nhanKhau.setDisable(true);
         hoKhau.setDisable(true);
         

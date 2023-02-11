@@ -140,20 +140,8 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="53.0" layoutY="230.0" text="Số tạm vắng">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="53.0" layoutY="286.0" text="Số tạm trú">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
             <TextField fx:id="nhanKhau" layoutX="357.0" layoutY="123.0" prefHeight="32.0" prefWidth="221.0" />
-            <TextField fx:id="tamVang" layoutX="357.0" layoutY="228.0" prefHeight="32.0" prefWidth="221.0" />
             <TextField fx:id="hoKhau" layoutX="357.0" layoutY="176.0" prefHeight="32.0" prefWidth="221.0" />
-            <TextField fx:id="tamTru" layoutX="357.0" layoutY="297.0" prefHeight="32.0" prefWidth="221.0" />
             <Label layoutX="53.0" layoutY="64.0" text="Tổ trưởng">
                <font>
                   <Font name="System Bold" size="18.0" />
