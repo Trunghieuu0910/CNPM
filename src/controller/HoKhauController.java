@@ -1,7 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
+
+    
  */
+
 package controller;
 
 import Services.HoKhauService;
@@ -9,26 +14,21 @@ import bean.HoKhauBean;
 import controller.HoKhauManageController.ThongTinHoKhauController;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
@@ -36,12 +36,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
-import model.HoKhau;
 
-/**
- *
- * @author Admin
- */
+
 public class HoKhauController implements Initializable {
 
     private final StageController sc = new StageController();
@@ -68,7 +64,6 @@ public class HoKhauController implements Initializable {
 
     private ObservableList<HoKhauBean> hoKhauList;
 
-    private final String[] find_by = {"Tìm theo số hộ khẩu", "Tìm theo chủ hộ"};
     @FXML
     private AnchorPane pane1;
     @FXML
@@ -81,22 +76,23 @@ public class HoKhauController implements Initializable {
     private Button thongke_btn;
     @FXML
     private Button quanlysh_btn;
-    @FXML
-    private TableView<?> hokhau_table1;
-    @FXML
-    private TableColumn<?, ?> sohokhau1;
-    @FXML
-    private TableColumn<?, ?> tenchuho1;
-    @FXML
-    private TableColumn<?, ?> diachi1;
-    @FXML
-    private TableView<?> hokhau_table11;
-    @FXML
-    private TableColumn<?, ?> sohokhau11;
-    @FXML
-    private TableColumn<?, ?> tenchuho11;
-    @FXML
-    private TableColumn<?, ?> diachi11;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //Choice box
+
+        phan_quyen();
+
+        HoKhauService hoKhauService = new HoKhauService();
+        List<HoKhauBean> list = hoKhauService.getListHoKhau();
+        hoKhauList = FXCollections.observableList(list);
+
+        sohokhau.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getHoKhauModel().getMaHoKhau()));
+        tenchuho.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getChuHo().getHoTen()));
+        diachi.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getHoKhauModel().getDiaChi()));
+
+        hokhau_table.setItems(hoKhauList);
+    }
 
     private void switchToHoKhauScene(ActionEvent e) throws IOException {
         sc.switchToHoKhauScene(e);
@@ -201,23 +197,6 @@ public class HoKhauController implements Initializable {
     @FXML
     public void handleExit() {
         sc.handleExit();
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        //Choice box
-
-        phan_quyen();
-
-        HoKhauService hoKhauService = new HoKhauService();
-        List<HoKhauBean> list = hoKhauService.getListHoKhau();
-        hoKhauList = FXCollections.observableList(list);
-
-        sohokhau.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getHoKhauModel().getMaHoKhau()));
-        tenchuho.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getChuHo().getHoTen()));
-        diachi.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getHoKhauModel().getDiaChi()));
-
-        hokhau_table.setItems(hoKhauList);
     }
 
     public void phan_quyen() {

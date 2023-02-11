@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller.HoKhauManageController;
 
@@ -18,7 +20,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import model.HoKhauModel;
 import model.NhanKhauModel;
 import model.ThanhVienCuaHoModel;
 
@@ -88,9 +89,7 @@ public class ThongTinHoKhauController implements Initializable {
             list.add(a);
         }
 
-        // System.out.println(list.size());
         nhanKhauList = FXCollections.observableList(list);
-//        System.out.println(nhanKhauList.size());
 //        
 //        for (MemOfFamily i : nhanKhauList){
 //            System.out.println(i.getNhanKhau().getNhanKhauModel().getHoTen());
@@ -104,7 +103,7 @@ public class ThongTinHoKhauController implements Initializable {
         gioiTinh.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getNhanKhau().getNhanKhauModel().getGioiTinh()));
         ngaySinh.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getNhanKhau().getNhanKhauModel().getNamSinh().toString()));
         quanHeChuHo.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getThanhVienCuaHoModel().getQuanHeVoiChuHo()));
-//        
+
         thanhVienTable.setItems(nhanKhauList);
 
     }

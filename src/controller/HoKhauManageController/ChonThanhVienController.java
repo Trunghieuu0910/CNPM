@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller.HoKhauManageController;
 
@@ -8,11 +10,9 @@ import Services.HoKhauService;
 import Services.NhanKhauService;
 import bean.MemOfFamily;
 import bean.NhanKhauBean;
-import static controller.HoKhauManageController.TimChuHoController.nk;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -37,11 +37,6 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author T14
- */
 public class ChonThanhVienController implements Initializable {
 
     public static List<MemOfFamily> thanhVienMoi = new ArrayList();

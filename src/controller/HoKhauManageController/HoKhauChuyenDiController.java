@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller.HoKhauManageController;
 
 import Services.HoKhauService;
 import bean.HoKhauBean;
-import static controller.HoKhauManageController.ChonThanhVienController.map;
-import static controller.HoKhauManageController.ChonThanhVienController.thanhVienMoi;
 import controller.StageController;
 import java.io.IOException;
 import java.net.URL;
@@ -30,10 +30,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-/**
- *
- * @author T14
- */
 public class HoKhauChuyenDiController implements Initializable {
 
     private StageController sc = new StageController();

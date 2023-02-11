@@ -1,10 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Bui Anh Tuan
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller;
 
 import Services.SuKienService;
+import controller.QuanLySHManageController.ChiTietSuKienController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -15,7 +18,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -24,13 +30,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.SuKien;
 
-/**
- * FXML Controller class
- *
- * @author Admin
- */
 public class QuanLySHController implements Initializable {
 
     private StageController sc = new StageController();
@@ -62,6 +65,8 @@ public class QuanLySHController implements Initializable {
     private TableColumn<SuKien, String> place_col;
     @FXML
     private TableColumn<SuKien, String> time_col;
+    @FXML
+    private TableColumn<SuKien, Integer> id_col;
 
     /**
      * Initializes the controller class.
@@ -78,6 +83,29 @@ public class QuanLySHController implements Initializable {
             Logger.getLogger(QuanLySHController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        sukien_table.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+
+                FXMLLoader f = new FXMLLoader(getClass().getResource("/view/ChiTietSuKien.fxml"));
+
+                Parent root1 = null;
+                try {
+                    root1 = (Parent) f.load();
+                } catch (IOException ex) {
+                    Logger.getLogger(QuanLySHController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                ChiTietSuKienController controller = f.getController();
+                SuKien s = sukien_table.getSelectionModel().getSelectedItem();
+                controller.setThongTinSuKien(s);
+
+                Stage stage1 = new Stage();
+                stage1.setScene(new Scene(root1));
+                stage1.initModality(Modality.APPLICATION_MODAL);
+                stage1.setResizable(false);
+                stage1.show();
+
+            }
+        });
     }
 
     public void phan_quyen() {
@@ -115,6 +143,11 @@ public class QuanLySHController implements Initializable {
     @FXML
     private void switchToTrangChuScene(ActionEvent e) throws IOException {
         sc.switchToTrangChuScene(e);
+    }
+    
+    @FXML
+    private void switchToChiTietSuKienScene(ActionEvent e) throws IOException {
+        sc.switchToChiTietSuKienScene(e);
     }
 
     @FXML
@@ -158,6 +191,8 @@ public class QuanLySHController implements Initializable {
         place_col.setCellValueFactory(new PropertyValueFactory<>("place"));
 
         time_col.setCellValueFactory(new PropertyValueFactory<>("time"));
+
+        id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
 
         sukien_table.setItems(SKService.getSuKien());
     }

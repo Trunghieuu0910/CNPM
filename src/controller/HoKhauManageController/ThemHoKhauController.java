@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/* 
+    Created on : Oct 22, 2022
+    Author     : Nguyen Trung Hieu
+    Teacher    : Trinh Thanh Trung
+    Class      : Nhap mon cong nghe phan mem - code: 136813
  */
 package controller.HoKhauManageController;
 
@@ -25,13 +27,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
@@ -41,9 +37,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
-import model.HoKhauModel;
 import model.ThanhVienCuaHoModel;
 
 /**
@@ -169,19 +162,20 @@ public class ThemHoKhauController extends AnimationTimer implements Initializabl
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tenChuHo.setEditable(false);
-        ngaySinh.setEditable(false);
-        soCCCD.setEditable(false);
-//        ChonThanhVienController.thanhVienMoi = new ArrayList();
-//        TimChuHoController.nk = new NhanKhauBean();
-//        TimChuHoController.map = new HashMap<String, String>();
-//        this.map = new HashMap<String, String>();
-//        this.listThanhVien = new ArrayList<>();
+        tenChuHo.setDisable(true);
+        ngaySinh.setDisable(true);
+        soCCCD.setDisable(true);
+        ChonThanhVienController.thanhVienMoi = new ArrayList();
+        TimChuHoController.nk = null;
+        TimChuHoController.map = new HashMap<String, String>();
+        this.map = new HashMap<String, String>();
+        this.listThanhVien = new ArrayList<>();
         ChonThanhVienController.map = new HashMap<String, String>();
-        setListThanhVien(listThanhVien);
+        setListThanhVien(ChonThanhVienController.thanhVienMoi);
         phan_quyen();
         start();
     }
+
 
     public void setNhanKhauBean(NhanKhauBean nhanKhauBean) {
         this.nhanKhauBean = nhanKhauBean;
