@@ -74,7 +74,7 @@
                         </Pane>
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                            <children>
-                              <Button layoutX="53.0" layoutY="-3.0" mnemonicParsing="false" onAction="#switchToTachHoKhauScene" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Tách hộ Khẩu">
+                              <Button layoutX="53.0" layoutY="-3.0" mnemonicParsing="false" onAction="#switchToTachHoKhauScene" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Tách hộ khẩu">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -199,7 +199,7 @@
                   </Button>
                </children>
             </HBox>
-            <Label layoutY="55.0" prefHeight="25.0" prefWidth="713.0" style="-fx-alignment: center;" text="DANH SÁCH HỘ KHẨU PHƯỜNG 12" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Label layoutY="55.0" prefHeight="25.0" prefWidth="713.0" style="-fx-alignment: center;" text="DANH SÁCH HỘ KHẨU" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

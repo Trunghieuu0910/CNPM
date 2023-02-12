@@ -158,7 +158,7 @@
                   </Pane>
                   <Pane fx:id="nhankhau_pane" prefHeight="120.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="nhankhau_btn" layoutY="24.0" mnemonicParsing="false" onAction="#switchToNhanKhauScene" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-width: 0px 0px 0px 3px; -fx-cursor: hand;" text="    Nhân khẩu" textFill="WHITE">
+                        <Button fx:id="nhankhau_btn" layoutY="24.0" mnemonicParsing="false" onAction="#switchToNhanKhauScene" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 0px 3px; -fx-cursor: hand;" text="    Nhân khẩu" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
