@@ -154,8 +154,6 @@ public class TrangChuController implements Initializable {
             numberOfHoKhau++;
         }
         
-        System.out.println(numberOfHoKhau);
-
         nhanKhau.setText(String.valueOf(numberOfNhanKhau));
         hoKhau.setText(String.valueOf(numberOfHoKhau));
 

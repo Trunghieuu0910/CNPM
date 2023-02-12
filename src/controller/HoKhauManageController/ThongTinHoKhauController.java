@@ -50,6 +50,8 @@ public class ThongTinHoKhauController implements Initializable {
     private TableColumn<MemOfFamily, String> ngaySinh;
     @FXML
     private TableColumn<MemOfFamily, String> quanHeChuHo;
+    @FXML
+    private TableColumn<MemOfFamily, String> ghiChu;
 
     private ObservableList<MemOfFamily> nhanKhauList;
 
@@ -103,6 +105,7 @@ public class ThongTinHoKhauController implements Initializable {
         gioiTinh.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getNhanKhau().getNhanKhauModel().getGioiTinh()));
         ngaySinh.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getNhanKhau().getNhanKhauModel().getNamSinh().toString()));
         quanHeChuHo.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getThanhVienCuaHoModel().getQuanHeVoiChuHo()));
+        ghiChu.setCellValueFactory(cellData -> new SimpleObjectProperty<String>(cellData.getValue().getNhanKhau().getNhanKhauModel().getGhiChu()));
 
         thanhVienTable.setItems(nhanKhauList);
 

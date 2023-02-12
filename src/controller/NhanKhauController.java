@@ -173,6 +173,7 @@ public class NhanKhauController implements Initializable {
                 nhanKhauBean = nhanKhauService.getNhanKhau(nhanKhauBean.getChungMinhThuModel().getSoCMT());
          
                 controller.chiTiet(nhanKhauBean);
+                
                 Stage stage1 = new Stage();
                 stage1.setScene(new Scene(root1));
                 stage1.initModality(Modality.APPLICATION_MODAL);

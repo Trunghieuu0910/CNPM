@@ -79,6 +79,8 @@ public class ChiTietNhanKhauController implements Initializable {
 
     @FXML
     private TextField noiLamViec_TextField;
+    @FXML
+    private TextField ghiChu_TextField;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -126,6 +128,11 @@ public class ChiTietNhanKhauController implements Initializable {
         bietTiengDanToc_TextField.setText(nhanKhauBean.getNhanKhauModel().getBietTiengDanToc());
 
         noiLamViec_TextField.setText(nhanKhauBean.getNhanKhauModel().getNoiLamViec());
+        
+        ghiChu_TextField.setText(nhanKhauBean.getNhanKhauModel().getGhiChu());
+        
+        System.out.println(nhanKhauBean.getNhanKhauModel().getGhiChu());
+        
     }
 
     public void setEditableInput() {
@@ -164,5 +171,7 @@ public class ChiTietNhanKhauController implements Initializable {
         bietTiengDanToc_TextField.setEditable(false);
 
         noiLamViec_TextField.setEditable(false);
+        
+        ghiChu_TextField.setEditable(false);
     }
 }

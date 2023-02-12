@@ -66,6 +66,7 @@ public class NhanKhauService {
                 nhanKhau.setNoiLamViec(rs.getString("noiLamViec"));
                 nhanKhau.setBietTiengDanToc(rs.getString("bietTiengDanToc"));
                 nhanKhau.setSoHoChieu(rs.getString("soHoChieu"));
+                nhanKhau.setGhiChu(rs.getString("ghiChu"));
                 
                 chungMinhThuModel.setIdNhanKhau(rs.getInt("idNhanKhau"));
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
@@ -363,6 +364,8 @@ public class NhanKhauService {
             preparedStatement.execute();
 
             connection.close();
+            
+             
             return true;
         } catch (Exception e) {
             System.out.println(e);
@@ -409,8 +412,6 @@ public class NhanKhauService {
             preparedStatement.setString(2, khaiTuModel.getSoGiayKhaiTu());
             preparedStatement.setInt(3, khaiTuModel.getIdNguoiKhai());
             preparedStatement.setInt(4, khaiTuModel.getIdNguoiChet());
-            //preparedStatement.setString(3, String.valueOf(khaiTuModel.getIdNguoiKhai()));
-            //preparedStatement.setString(4, String.valueOf(khaiTuModel.getIdNguoiChet()));
 
             java.sql.Date ngayKhai = new java.sql.Date(khaiTuModel.getNgayKhai().getTime());
             preparedStatement.setDate(5, ngayKhai);
@@ -420,7 +421,18 @@ public class NhanKhauService {
 
             preparedStatement.execute();
             preparedStatement.close();
+            
+            
+            String query2 = "UPDATE nhan_khau SET ghiChu = 'Đã qua đời' WHERE ID = " + khaiTuModel.getIdNguoiChet();
+            Statement st = connection.createStatement();
+            st.execute(query2);
+            
+            st.close();
+            
             connection.close();
+            
+            
+            
             return true;
         } catch (Exception e) {
             System.out.println(e);

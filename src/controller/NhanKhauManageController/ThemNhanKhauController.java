@@ -122,7 +122,6 @@ public class ThemNhanKhauController implements Initializable {
 
     @FXML
     public void switchToDangKyTamVangScene(ActionEvent e) throws IOException {
-        System.out.println("123");
         sc.switchToDangKyTamVangScene(e);
 
     }

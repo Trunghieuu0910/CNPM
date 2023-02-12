@@ -1,4 +1,4 @@
- /* 
+/* 
     Created on : Oct 22, 2022
     Author     : Nguyen Trung Hieu
     Teacher    : Trinh Thanh Trung
@@ -97,11 +97,13 @@ public class HoKhauService {
                 hoKhauModel.setNgayLap(rs.getDate("ngayLap"));
                 hoKhauModel.setDiaChi(rs.getString("diaChi"));
                 NhanKhauModel chuHo = temp.getChuHo();
+
                 chuHo.setID(rs.getInt("ID"));
                 chuHo.setHoTen(rs.getString("hoTen"));
                 chuHo.setGioiTinh(rs.getString("gioiTinh"));
                 chuHo.setNamSinh(rs.getDate("namSinh"));
                 chuHo.setDiaChiHienNay(rs.getString("diaChiHienNay"));
+
                 try {
                     String sql = "SELECT * FROM nhan_khau INNER JOIN thanh_vien_cua_ho ON nhan_khau.ID = thanh_vien_cua_ho.idNhanKhau "
                             + "WHERE thanh_vien_cua_ho.idHoKhau = "
@@ -125,6 +127,7 @@ public class HoKhauService {
                         nhanKhauModel.setSoHoChieu(rs_1.getString("soHoChieu"));
                         nhanKhauModel.setNoiThuongTru(rs_1.getString("noiThuongTru"));
                         nhanKhauModel.setDiaChiHienNay(rs_1.getString("diaChiHienNay"));
+                        nhanKhauModel.setGhiChu(rs_1.getString("ghiChu"));
 
                         thanhVienCuaHoModel.setIdHoKhau(rs_1.getInt("idHoKhau"));
                         thanhVienCuaHoModel.setIdNhanKhau(rs_1.getInt("idNhanKhau"));
@@ -197,6 +200,7 @@ public class HoKhauService {
                         nhanKhauModel.setSoHoChieu(rs_1.getString("soHoChieu"));
                         nhanKhauModel.setNoiThuongTru(rs_1.getString("noiThuongTru"));
                         nhanKhauModel.setDiaChiHienNay(rs_1.getString("diaChiHienNay"));
+                        nhanKhauModel.setGhiChu(rs_1.getString("ghiChu"));
 
                         thanhVienCuaHoModel.setIdHoKhau(rs_1.getInt("idHoKhau"));
                         thanhVienCuaHoModel.setIdNhanKhau(rs_1.getInt("ID"));
@@ -205,7 +209,6 @@ public class HoKhauService {
                         listThanhVienCuaHo.add(thanhVienCuaHoModel);
                     }
                 } catch (Exception e) {
-                    System.out.println("services.HoKhauService.search()");
                     System.out.println(e.getMessage());
                 }
                 list.add(temp);
