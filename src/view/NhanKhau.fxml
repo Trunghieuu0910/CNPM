@@ -216,7 +216,7 @@
                   </Button>
                </children>
             </HBox>
-            <Label layoutY="55.0" prefHeight="25.0" prefWidth="713.0" style="-fx-alignment: center;" text="DANH SÁCH NHÂN KHẨU PHƯỜNG 12" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Label layoutY="55.0" prefHeight="25.0" prefWidth="713.0" style="-fx-alignment: center;" text="DANH SÁCH NHÂN KHẨU" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

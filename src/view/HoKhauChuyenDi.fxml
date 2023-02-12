@@ -74,7 +74,7 @@
                         </Pane>
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                            <children>
-                              <Button layoutX="53.0" layoutY="-3.0" mnemonicParsing="false" onAction="#switchToTachHoKhauScene" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Tách hộ Khẩu">
+                              <Button layoutX="53.0" layoutY="-3.0" mnemonicParsing="false" onAction="#switchToTachHoKhauScene" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Tách hộ khẩu">
                                  <font>
                                     <Font size="16.0" />
                                  </font>

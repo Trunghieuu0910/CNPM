@@ -209,7 +209,7 @@ public class StageController {
 
     @FXML
     public void switchToThongTinHoKhauScene(MouseEvent e) throws IOException {
-        FXMLLoader fl = new FXMLLoader(getClass().getResource("/view/thongTinHoKhau.fxml"));
+        FXMLLoader fl = new FXMLLoader(getClass().getResource("/view/ThongTinHoKhau.fxml"));
         Parent root1 = (Parent) fl.load();
         Stage stage1 = new Stage();
         stage1.setScene(new Scene(root1));
