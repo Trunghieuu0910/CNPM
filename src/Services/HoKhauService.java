@@ -261,10 +261,10 @@ public class HoKhauService {
         // xoa cac thanh vien
 
         hoKhauBean.getListThanhVienCuaHo().forEach((ThanhVienCuaHoModel item) -> {
-            String sql = "DELETE FROM thanh_vien_cua_ho WHERE idNhanKhau = " + item.getIdHoKhau();
+            String sql = "DELETE FROM thanh_vien_cua_ho WHERE idNhanKhau = " + item.getIdNhanKhau();
             try {
                 Connection connection = MysqlConnection.getMysqlConnection();
-                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 int rs = preparedStatement.executeUpdate();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
